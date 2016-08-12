@@ -15,11 +15,15 @@ class SignInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = DataBindingUtil.setContentView<ActivitySignInBinding>(this, R.layout.activity_sign_in)
-        binding.vm = SignInViewModel(this)
+        val viewModel = SignInViewModel(this)
+        binding.vm = viewModel
 
         setSupportActionBar(binding.toolbar)
 
         UserPreference.load(this).jenkinsUrl?.let {
+            if (!viewModel.isValidUrl(it)) {
+                return
+            }
             startActivity(MainActivity.createIntent(this))
             finish()
         }

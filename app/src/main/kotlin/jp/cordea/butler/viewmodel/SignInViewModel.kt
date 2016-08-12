@@ -28,8 +28,8 @@ class SignInViewModel(private val activity: SignInActivity) : BaseObservable() {
     @Bindable
     var advancedVisibility = View.GONE
 
-    private fun isValidUrl(url: String): Boolean {
-        return !url.isNullOrBlank() && Patterns.WEB_URL.matcher(url).matches()
+    fun isValidUrl(url: String): Boolean {
+        return !url.isNullOrBlank() && Patterns.WEB_URL.matcher(url).matches() && (url.contains("http://") || url.contains("https://"))
     }
 
     val onCheckedChange = CompoundButton.OnCheckedChangeListener { compoundButton, b ->
@@ -112,5 +112,4 @@ class SignInViewModel(private val activity: SignInActivity) : BaseObservable() {
                 .setPositiveButton(R.string.dialog_button_close, null)
                 .show()
     }
-
 }

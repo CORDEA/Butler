@@ -1,0 +1,113 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="list_item_text_size">16sp</dimen>
+    <dimen name="list_item_text_size_dense">13sp</dimen>
+
+    <dimen name="char_circle_font_size_small">25dp</dimen>
+    <dimen name="char_circle_font_size_big">40dp</dimen>
+
+    <dimen name="determinate_progress_stroke_width">10dp</dimen>
+
+    <dimen name="sign_in_advanced_layout_top_margin">16dp</dimen>
+
+    <dimen name="circular_chart_stroke_width">2dp</dimen>
+    <dimen name="line_chart_stroke_width">1dp</dimen>
+
+    <dimen name="circular_chart_text_size">40dp</dimen>
+    <dimen name="circular_chart_text_stroke_width">4dp</dimen>
+
+    <dimen name="dialog_edit_text_margin">24dp</dimen>
+
+    <dimen name="job_card_margin">8dp</dimen>
+    <dimen name="computer_detail_card_margin">8dp</dimen>
+
+    <dimen name="project_detail_card_margin">8dp</dimen>
+    <dimen name="project_detail_card_half_margin">4dp</dimen>
+
+    <dimen name="build_list_top_padding">8dp</dimen>
+    
+    <dimen name="project_detail_header_padding">16dp</dimen>
+    <dimen name="project_detail_title_text_size">24sp</dimen>
+    <dimen name="project_detail_title_top_margin">24dp</dimen>
+    <dimen name="project_detail_title_bottom_margin">12dp</dimen>
+    <dimen name="project_detail_header_icon_start_margin">16dp</dimen>
+    <dimen name="project_detail_header_vertical_margin">16dp</dimen>
+    
+    <dimen name="project_detail_header_shadow_height">2dp</dimen>
+    <dimen name="project_detail_card_padding">16dp</dimen>
+    <dimen name="project_detail_card_title_bottom_margin">8dp</dimen>
+    
+    <dimen name="sign_in_padding">16dp</dimen>
+    <dimen name="sign_in_advanced_start_margin">16dp</dimen>
+    <dimen name="sign_in_advanced_checkbox_bottom_margin">8dp</dimen>
+    
+    <dimen name="computer_list_top_padding">8dp</dimen>
+    
+    <dimen name="setting_list_item_horizontal_margin">16dp</dimen>
+    <dimen name="setting_list_item_content_end_margin">50dp</dimen>
+    <dimen name="setting_list_item_height">88dp</dimen>
+    <dimen name="setting_list_top_margin">8dp</dimen>
+
+    <dimen name="tab_list_top_padding">4dp</dimen>
+
+    <dimen name="user_list_top_padding">4dp</dimen>
+
+    <dimen name="build_list_item_height">72dp</dimen>
+    <dimen name="build_list_item_padding">16dp</dimen>
+    <dimen name="build_list_item_status_size">40dp</dimen>
+    <dimen name="build_list_item_status_end_margin">16dp</dimen>
+    
+    <dimen name="build_param_list_item_height">72dp</dimen>
+    <dimen name="build_param_list_item_padding">16dp</dimen>
+    <dimen name="build_param_list_item_text_end_margin">50dp</dimen>
+
+    <dimen name="computer_list_item_height">88dp</dimen>
+    <dimen name="computer_list_item_padding">16dp</dimen>
+
+    <dimen name="executor_list_item_height">72dp</dimen>
+    <dimen name="executor_list_item_padding">16dp</dimen>
+    <dimen name="executor_list_item_progress_size">40dp</dimen>
+    <dimen name="executor_list_item_content_start_margin">16dp</dimen>
+
+    <dimen name="job_list_item_vertical_margin">16dp</dimen>
+    <dimen name="job_list_item_header_bottom_margin">16dp</dimen>
+    <dimen name="job_list_item_title_top_margin">24dp</dimen>
+    <dimen name="job_list_item_title_end_margin">96dp</dimen>
+    <dimen name="job_list_item_title_text_size">24sp</dimen>
+    <dimen name="job_list_item_timestamp_top_margin">8dp</dimen>
+    <dimen name="job_list_item_timestamp_start_margin">16dp</dimen>
+    <dimen name="job_list_item_status_size">80dp</dimen>
+    <dimen name="job_list_item_status_top_margin">16dp</dimen>
+    <dimen name="job_list_item_progress_horizontal_margin">16dp</dimen>
+    <dimen name="job_list_item_button_margin">8dp</dimen>
+
+    <dimen name="monitor_data_card_margin">8dp</dimen>
+    <dimen name="monitor_data_list_item_padding">16dp</dimen>
+    <dimen name="monitor_data_title_bottom_margin">8dp</dimen>
+    <dimen name="monitor_data_list_item_header_shadow_height">2dp</dimen>
+    <dimen name="monitor_data_list_item_header_title_text_size">24sp</dimen>
+    <dimen name="monitor_data_list_item_header_title_bottom_margin">16dp</dimen>
+    <dimen name="monitor_data_list_item_header_description_bottom_margin">2dp</dimen>
+    <dimen name="monitor_data_list_item_line_data_bottom_margin">8dp</dimen>
+    <dimen name="monitor_data_list_item_line_data_text_size">24sp</dimen>
+
+    <dimen name="stream_project_list_item_horizontal_padding">16dp</dimen>
+    <dimen name="stream_project_list_item_height">72dp</dimen>
+    <dimen name="stream_project_list_item_status_size">40dp</dimen>
+    <dimen name="stream_project_list_item_status_end_margin">16dp</dimen>
+
+    <dimen name="tab_list_item_horizontal_padding">16dp</dimen>
+    <dimen name="tab_list_item_height">48dp</dimen>
+
+    <dimen name="user_list_item_height">60dp</dimen>
+    <dimen name="user_list_item_horizontal_height">16dp</dimen>
+
+    <dimen name="error_content_button_top_margin">46dp</dimen>
+</resources>

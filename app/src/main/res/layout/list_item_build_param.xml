@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="jp.cordea.butler.viewmodel.BuildParamListItemViewModel" />
+    </data>
+
+    <FrameLayout
+        android:paddingStart="@dimen/build_param_list_item_padding"
+        android:paddingEnd="@dimen/build_param_list_item_padding"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/build_param_list_item_height">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_marginEnd="@dimen/build_param_list_item_text_end_margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="@{vm.name}"
+                android:textSize="@dimen/list_item_text_size"
+                android:textColor="@color/primaryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@{vm.stringValue}"
+                android:textSize="@dimen/list_item_text_size"
+                android:visibility="@{vm.stringVisibility}"
+                android:textColor="@color/secondaryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <android.support.v7.widget.SwitchCompat
+            android:layout_gravity="center_vertical|end"
+            android:visibility="@{vm.booleanVisibility}"
+            app:setOnCheckedChangeListener="@{vm.onCheckedChangeListener}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </FrameLayout>
+
+</layout>

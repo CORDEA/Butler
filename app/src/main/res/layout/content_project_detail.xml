@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="jp.cordea.butler.viewmodel.ProjectDetailViewModel" />
+    </data>
+
+    <ScrollView
+        tools:context="jp.cordea.butler.activity.ProjectDetailActivity"
+        tools:showIn="@layout/activity_project_detail"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@android:color/white"
+                android:paddingEnd="@dimen/project_detail_header_padding"
+                android:paddingStart="@dimen/project_detail_header_padding"
+                android:paddingBottom="@dimen/project_detail_header_padding">
+
+                <TextView
+                    android:text="@{vm.title}"
+                    android:textSize="@dimen/project_detail_title_text_size"
+                    android:textColor="@color/primaryText"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_marginTop="@dimen/project_detail_title_top_margin"
+                    android:layout_marginBottom="@dimen/project_detail_title_bottom_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="@{vm.description}"
+                    android:layout_marginBottom="@dimen/nav_header_vertical_spacing"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/nav_header_vertical_spacing"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        style="@style/IconActive"
+                        android:src="@drawable/ic_history_black_24px"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="@{vm.timestamp}"
+                        android:layout_marginStart="@dimen/project_detail_header_icon_start_margin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        style="@style/IconActive"
+                        android:src="@drawable/ic_access_time_black_24px"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="@{vm.duration}"
+                        android:layout_marginStart="@dimen/project_detail_header_icon_start_margin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:background="@drawable/project_detail_shadow"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/project_detail_header_shadow_height" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.CardView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/project_detail_card_margin"
+                    android:layout_marginTop="@dimen/project_detail_card_margin"
+                    android:layout_marginBottom="@dimen/project_detail_card_margin"
+                    android:layout_marginEnd="@dimen/project_detail_card_half_margin"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="@dimen/project_detail_card_padding"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_marginBottom="@dimen/project_detail_card_title_bottom_margin"
+                            android:text="@string/project_detail_build_status"
+                            android:textColor="@color/primaryText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <jp.cordea.butler.view.ColorStatusCircleView
+                            app:status="@{vm.color}"
+                            app:fullText="@{true}"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="@dimen/project_detail_card_margin"
+                    android:layout_marginStart="@dimen/project_detail_card_half_margin"
+                    android:layout_marginTop="@dimen/project_detail_card_margin"
+                    android:layout_marginBottom="@dimen/project_detail_card_margin"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="@dimen/project_detail_card_padding"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_marginBottom="@dimen/project_detail_card_title_bottom_margin"
+                            android:text="@string/project_detail_build_stability"
+                            android:textColor="@color/primaryText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <jp.cordea.butler.view.DeterminateProgressBar
+                            app:progress="@{vm.score}"
+                            app:isTextVisible="@{true}"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView
+                android:visibility="@{vm.upstreamVisibility}"
+                android:layout_marginStart="@dimen/project_detail_card_margin"
+                android:layout_marginEnd="@dimen/project_detail_card_margin"
+                android:layout_marginBottom="@dimen/project_detail_card_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="@dimen/project_detail_card_padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/project_detail_build_upstream"
+                        android:layout_marginBottom="@dimen/project_detail_card_title_bottom_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <jp.cordea.butler.view.AdjustedListView
+                        android:id="@+id/upstream_list_view"
+                        app:adapter="@{vm.upstreamAdapter}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:visibility="@{vm.downstreamVisibility}"
+                android:layout_marginStart="@dimen/project_detail_card_margin"
+                android:layout_marginEnd="@dimen/project_detail_card_margin"
+                android:layout_marginBottom="@dimen/project_detail_card_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="@dimen/project_detail_card_padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/project_detail_build_downstream"
+                        android:layout_marginBottom="@dimen/project_detail_card_title_bottom_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <jp.cordea.butler.view.AdjustedListView
+                        android:id="@+id/downstream_list_view"
+                        app:adapter="@{vm.downstreamAdapter}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

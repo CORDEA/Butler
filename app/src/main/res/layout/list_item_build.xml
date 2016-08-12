@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="jp.cordea.butler.viewmodel.BuildListItemViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="horizontal"
+                  android:gravity="center_vertical"
+                  android:paddingStart="@dimen/build_list_item_padding"
+                  android:paddingEnd="@dimen/build_list_item_padding"
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/build_list_item_height">
+
+        <jp.cordea.butler.view.ResultStatusCircleView
+            app:status="@{vm.result}"
+            android:layout_marginEnd="@dimen/build_list_item_status_end_margin"
+            android:layout_width="@dimen/build_list_item_status_size"
+            android:layout_height="@dimen/build_list_item_status_size" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@{vm.title}"
+                    android:textSize="@dimen/list_item_text_size"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/primaryText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="@{vm.duration}"
+                    android:layout_gravity="end"
+                    android:textSize="@dimen/list_item_text_size"
+                    android:textColor="@color/secondaryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </FrameLayout>
+
+            <TextView
+                android:text="@{vm.description}"
+                android:textSize="@dimen/list_item_text_size"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/secondaryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

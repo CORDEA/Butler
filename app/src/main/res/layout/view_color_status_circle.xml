@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="jp.cordea.butler.viewmodel.ColorStatusCircleViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <jp.cordea.butler.view.ColorProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{vm.progressVisibility}"
+            app:progressColor="@{vm.circleColor}" />
+
+        <jp.cordea.butler.view.StatusCircleView
+            android:id="@+id/view"
+            android:visibility="@{vm.viewVisibility}"
+            app:circleColor="@{vm.circleColor}"
+            app:circleText="@{vm.circleText}"
+            app:fullText="@{vm.fullText}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+
+</layout>

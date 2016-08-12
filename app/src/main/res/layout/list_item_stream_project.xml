@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <variable
+            name="vm"
+            type="jp.cordea.butler.viewmodel.StreamProjectListItemViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/stream_project_list_item_horizontal_padding"
+        android:paddingEnd="@dimen/stream_project_list_item_horizontal_padding"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/stream_project_list_item_height">
+
+        <jp.cordea.butler.view.ColorStatusCircleView
+            app:status="@{vm.color}"
+            app:fullText="@{false}"
+            android:layout_marginEnd="@dimen/stream_project_list_item_status_end_margin"
+            android:layout_width="@dimen/stream_project_list_item_status_size"
+            android:layout_height="@dimen/stream_project_list_item_status_size" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@{vm.title}"
+                android:textSize="@dimen/list_item_text_size"
+                android:textColor="@color/primaryText"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="@{vm.description}"
+                android:textSize="@dimen/list_item_text_size"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/secondaryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

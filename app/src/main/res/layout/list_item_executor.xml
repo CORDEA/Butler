@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="jp.cordea.butler.viewmodel.ExecutorListItemViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:paddingStart="@dimen/executor_list_item_padding"
+                  android:paddingEnd="@dimen/executor_list_item_padding"
+                  android:layout_height="@dimen/executor_list_item_height">
+
+        <jp.cordea.butler.view.DeterminateProgressBar
+            app:progress="@{vm.score}"
+            android:layout_gravity="center_vertical"
+            android:layout_width="@dimen/executor_list_item_progress_size"
+            android:layout_height="@dimen/executor_list_item_progress_size"/>
+
+        <LinearLayout
+            android:visibility="@{vm.contentVisibility}"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/executor_list_item_content_start_margin"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="@{vm.name}"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="@dimen/list_item_text_size"
+                android:textColor="@color/primaryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="@{vm.duration}"
+                android:textSize="@dimen/list_item_text_size"
+                android:textColor="@color/secondaryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:visibility="@{vm.emptyVisibility}"
+            android:text="@string/executor_list_item_empty"
+            android:layout_marginStart="@dimen/executor_list_item_content_start_margin"
+            android:textSize="@dimen/list_item_text_size"
+            android:textColor="@color/primaryText"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</layout>

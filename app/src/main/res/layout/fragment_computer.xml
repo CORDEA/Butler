@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="jp.cordea.butler.viewmodel.ComputerViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/list_view"
+            app:adapter="@{vm.adapter}"
+            android:paddingTop="@dimen/computer_list_top_padding"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <include
+            app:vm="@{vm}"
+            layout="@layout/content_progress" />
+
+    </FrameLayout>
+
+</layout>
+

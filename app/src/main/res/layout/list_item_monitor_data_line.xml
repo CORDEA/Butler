@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable
+            name="vm"
+            type="jp.cordea.butler.viewmodel.MonitorDataLineListItemViewModel" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_marginStart="@dimen/monitor_data_card_margin"
+        android:layout_marginEnd="@dimen/monitor_data_card_margin"
+        android:layout_marginBottom="@dimen/monitor_data_card_margin"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="@dimen/monitor_data_list_item_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginBottom="@dimen/monitor_data_title_bottom_margin"
+                android:text="@{vm.title}"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/primaryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textSize="@dimen/monitor_data_list_item_line_data_text_size"
+                android:text="@{vm.data}"
+                android:layout_marginBottom="@dimen/monitor_data_list_item_line_data_bottom_margin"
+                android:textColor="@color/primaryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <jp.cordea.butler.view.LineChartView
+                app:lines="@{vm.history}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>

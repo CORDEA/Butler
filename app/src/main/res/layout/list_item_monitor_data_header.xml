@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="vm"
+            type="jp.cordea.butler.viewmodel.MonitorDataHeaderListItemViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:layout_marginBottom="@dimen/monitor_data_card_margin"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="@dimen/monitor_data_list_item_padding">
+
+            <TextView
+                android:text="@{vm.title}"
+                android:textSize="@dimen/monitor_data_list_item_header_title_text_size"
+                android:textColor="@color/primaryText"
+                android:layout_marginBottom="@dimen/monitor_data_list_item_header_title_bottom_margin"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="@{vm.description}"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <View
+            android:background="@drawable/project_detail_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/monitor_data_list_item_header_shadow_height" />
+
+    </LinearLayout>
+
+</layout>

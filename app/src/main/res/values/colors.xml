@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#03A9F4</color>
+    <color name="colorPrimaryDark">#0288D1</color>
+    <color name="colorPrimaryLight">#B3E5FC</color>
+    <color name="colorAccent">#FF9800</color>
+    <color name="primaryText">#212121</color>
+    <color name="secondaryText">#727272</color>
+    <color name="dividerColor">#BDBDBD</color>
+
+    <color name="statusSuccess">#4CAF50</color>
+    <color name="statusFailure">#F44336</color>
+
+    <color name="statusBlue">#2196F3</color>
+    <color name="statusDisabled">#607D8B</color>
+    <color name="statusAborted">#FF5722</color>
+    <color name="statusGrey">#9E9E9E</color>
+    <color name="statusNotbuilt">#9E9E9E</color>
+    <color name="statusRed">#F44336</color>
+    <color name="statusYellow">#FFEB3B</color>
+
+    <color name="statusUnknown">#9E9E9E</color>
+
+</resources>

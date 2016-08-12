@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="vm"
+            type="jp.cordea.butler.viewmodel.SignInViewModel" />
+    </data>
+
+<LinearLayout
+    android:id="@+id/content_signin"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/sign_in_padding"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="jp.cordea.butler.activity.SignInActivity"
+    tools:showIn="@layout/activity_sign_in">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:maxLines="1"
+            android:inputType="text"
+            app:addTextChangedListener="@{vm.urlOnTextChanged}"
+            android:hint="@string/login_url_hint_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/sign_in_advanced_layout_top_margin"
+        android:layout_marginBottom="@dimen/sign_in_advanced_checkbox_bottom_margin"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            app:setOnCheckedChangeListener="@{vm.onCheckedChange}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="@string/signin_advanced"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="@{vm.advancedVisibility}"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/sign_in_advanced_start_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:maxLines="1"
+                android:inputType="text"
+                app:addTextChangedListener="@{vm.nameOnTextChanged}"
+                android:hint="@string/username_hint_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:maxLines="1"
+                android:inputType="text"
+                app:addTextChangedListener="@{vm.tokenOnTextChanged}"
+                android:hint="@string/api_token_hint_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+</layout>

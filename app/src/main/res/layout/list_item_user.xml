@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="vm"
+            type="jp.cordea.butler.viewmodel.UserListItemViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:paddingStart="@dimen/user_list_item_horizontal_height"
+        android:paddingEnd="@dimen/user_list_item_horizontal_height"
+        android:layout_height="@dimen/user_list_item_height">
+
+        <TextView
+            android:text="@{vm.title}"
+            android:textSize="@dimen/list_item_text_size_dense"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/primaryText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="@{vm.description}"
+            android:textSize="@dimen/list_item_text_size_dense"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/secondaryText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</layout>

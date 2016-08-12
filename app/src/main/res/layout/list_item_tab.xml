@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="jp.cordea.butler.viewmodel.TabListItemViewModel" />
+    </data>
+
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:paddingStart="@dimen/tab_list_item_horizontal_padding"
+        android:paddingEnd="@dimen/tab_list_item_horizontal_padding"
+        android:layout_height="@dimen/tab_list_item_height">
+
+        <TextView
+            android:text="@{vm.title}"
+            android:textColor="@color/primaryText"
+            android:textSize="@dimen/list_item_text_size_dense"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_height="wrap_content"/>
+
+    </FrameLayout>
+
+</layout>

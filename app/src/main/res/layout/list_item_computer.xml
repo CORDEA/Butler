@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="vm"
+            type="jp.cordea.butler.viewmodel.ComputerListItemViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:paddingStart="@dimen/computer_list_item_padding"
+        android:paddingEnd="@dimen/computer_list_item_padding"
+        android:layout_height="@dimen/computer_list_item_height">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@{vm.title}"
+                android:textSize="@dimen/list_item_text_size"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/primaryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="@{vm.diff}"
+                android:layout_gravity="end"
+                android:textSize="@dimen/list_item_text_size"
+                android:textColor="@color/secondaryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </FrameLayout>
+
+        <TextView
+            android:text="@{vm.description}"
+            android:textSize="@dimen/list_item_text_size"
+            android:textColor="@color/secondaryText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="@{vm.status}"
+            android:textSize="@dimen/list_item_text_size"
+            android:textColor="@color/secondaryText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</layout>

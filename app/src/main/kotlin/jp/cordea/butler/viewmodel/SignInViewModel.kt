@@ -3,14 +3,12 @@ package jp.cordea.butler.viewmodel
 import android.app.AlertDialog
 import android.databinding.BaseObservable
 import android.databinding.Bindable
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Patterns
 import android.view.View
 import android.widget.CompoundButton
 import jp.cordea.butler.BR
-import jp.cordea.butler.activity.MainActivity
 import jp.cordea.butler.R
+import jp.cordea.butler.activity.MainActivity
 import jp.cordea.butler.activity.SignInActivity
 import jp.cordea.butler.model.UserPreference
 
@@ -19,11 +17,11 @@ import jp.cordea.butler.model.UserPreference
  */
 class SignInViewModel(private val activity: SignInActivity) : BaseObservable() {
 
-    private var url = ""
+    private var isCheck = false
 
-    private var isCheck: Boolean = false
-    private var username: String = ""
-    private var token: String = ""
+    var url = ""
+    var username = ""
+    var token = ""
 
     @Bindable
     var advancedVisibility = View.GONE
@@ -58,48 +56,6 @@ class SignInViewModel(private val activity: SignInActivity) : BaseObservable() {
                 UserPreference.save(activity, url)
                 activity.startActivity(MainActivity.createIntent(activity))
                 activity.finish()
-            }
-        }
-    }
-
-    val urlOnTextChanged = object : TextWatcher {
-        override fun afterTextChanged(p0: Editable?) {
-        }
-
-        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-        }
-
-        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            p0?.let {
-                url = it.toString()
-            }
-        }
-    }
-
-    val nameOnTextChanged = object : TextWatcher {
-        override fun afterTextChanged(p0: Editable?) {
-        }
-
-        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-        }
-
-        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            p0?.let {
-                username = it.toString()
-            }
-        }
-    }
-
-    val tokenOnTextChanged = object : TextWatcher {
-        override fun afterTextChanged(p0: Editable?) {
-        }
-
-        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-        }
-
-        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            p0?.let {
-                token = it.toString()
             }
         }
     }

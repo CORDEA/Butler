@@ -25,9 +25,9 @@
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.AppCompatEditText
+            android:text="@={vm.url}"
             android:maxLines="1"
             android:inputType="text"
-            app:addTextChangedListener="@{vm.urlOnTextChanged}"
             android:hint="@string/login_url_hint_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -66,9 +66,9 @@
             android:layout_height="wrap_content">
 
             <android.support.v7.widget.AppCompatEditText
+                android:text="@={vm.username}"
                 android:maxLines="1"
                 android:inputType="text"
-                app:addTextChangedListener="@{vm.nameOnTextChanged}"
                 android:hint="@string/username_hint_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -80,9 +80,9 @@
             android:layout_height="wrap_content">
 
             <android.support.v7.widget.AppCompatEditText
+                android:text="@={vm.token}"
                 android:maxLines="1"
                 android:inputType="text"
-                app:addTextChangedListener="@{vm.tokenOnTextChanged}"
                 android:hint="@string/api_token_hint_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>

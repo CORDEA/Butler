@@ -1,5 +1,7 @@
 # Butler
 
+[![codebeat badge](https://codebeat.co/badges/ec83ba04-4b01-4db7-87b3-d87e729c16a4)](https://codebeat.co/projects/github-com-cordea-butler-master)
+
 Jenkins client for Android
 
 ## Screenshots

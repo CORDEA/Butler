@@ -1,7 +1,6 @@
 package jp.cordea.butler.viewmodel
 
 import android.content.Context
-import android.util.Log
 import jp.cordea.butler.adapter.JobListAdapter
 import jp.cordea.butler.api.JenkinsClient
 import jp.cordea.butler.model.Jobs
@@ -24,8 +23,6 @@ class JobViewModel(private val context: Context) {
                         response?.let {
                             if (it.isSuccessful) {
                                 adapter.refreshItems(it.body().jobs.map { JobListItemViewModel(it, context) })
-                            } else {
-                                Log.i("xxxx", it.message())
                             }
                         }
                     }
